@@ -6,16 +6,21 @@
 }
 .display {
     display: flex;
-    justify-content: end;
+    flex-direction: column;
     align-items: end;
-    font-size: 3.5rem;
+    font-size: 3rem;
     padding: 10px;
     height: 100px;
     margin: 5px 20px;
     color: white;
     /* background-color: red; */
 }
+
+.result{
+    font-size: smaller;
+}
 .btn {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
