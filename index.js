@@ -18,3 +18,8 @@ document.querySelector(".clear").addEventListener("mouseup", () => {
     equation.innerHTML="";
     result.innerHTML="";
 });
+document.querySelector(".equalto").addEventListener("click", () => {
+    x=eval(x)
+    equation.innerHTML=x;
+    result.innerHTML="";
+});
