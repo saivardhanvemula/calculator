@@ -18,7 +18,9 @@ document.querySelectorAll(".op").forEach((b) => {
     b.addEventListener("click", () => {
         console.log(b.innerHTML);
         console.log(x[x.length - 1]);
-        if (!Number(x[x.length - 1])) {
+        if (x == "") {
+            pass;
+        } else if (!Number(x[x.length - 1])) {
             x = x.slice(0, x.length - 1);
             x = x + b.innerHTML;
             equation.innerHTML = x;
@@ -36,16 +38,13 @@ document.querySelector(".clear").addEventListener("dblclick", () => {
 document.querySelector(".clear").addEventListener("click", () => {
     x = x.slice(0, x.length - 1);
     try {
-        // x = x + b.innerHTML
         if (!x) {
             equation.innerHTML = "";
-            result.innerHTML="";
+            result.innerHTML = "";
         } else {
             equation.innerHTML = x;
             result.innerHTML = eval(x);
         }
-
-        
     } catch (e) {
         console.log(e);
     }
@@ -58,4 +57,7 @@ document.querySelector(".equalto").addEventListener("click", () => {
     } catch (e) {
         console.log(e);
     }
+});
+document.querySelector(".toggle").addEventListener("click", () => {
+    console.log("toggle");
 });

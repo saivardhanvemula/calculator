@@ -13,10 +13,9 @@
     height: 100px;
     margin: 5px 20px;
     color: white;
-    /* background-color: red; */
 }
 
-.result{
+.result {
     font-size: smaller;
 }
 .btn {
@@ -28,22 +27,21 @@
     font-size: 3rem;
     height: 100px;
     width: 100px;
-    background-color:#555555;
+    background-color: #555555;
     border-radius: 50px;
     margin: 10px;
 }
-.btn:hover{
+.btn:hover {
     filter: brightness(90%);
-    transition: .1s;
+    transition: 0.1s;
 }
 .buttons {
     width: 500px;
     height: 600px;
-    /* padding: ; */
     /* background-color: blue; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:  repeat(5,1fr);
 }
 .zero {
     width: 200px;
