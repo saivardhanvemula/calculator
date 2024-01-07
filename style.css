@@ -32,6 +32,10 @@
     border-radius: 50px;
     margin: 10px;
 }
+.btn:hover{
+    filter: brightness(90%);
+    transition: .1s;
+}
 .buttons {
     width: 500px;
     height: 600px;
