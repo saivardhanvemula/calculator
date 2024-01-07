@@ -18,6 +18,14 @@
 .result {
     font-size: smaller;
 }
+.bspace > svg{
+    height: 50px;
+    width: 50px;
+    /* aspect-ratio: 1/1; */
+}
+.toggle{
+    font-weight: bolder;
+}
 .btn {
     cursor: pointer;
     display: flex;
