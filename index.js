@@ -20,11 +20,11 @@ document.querySelectorAll(".op").forEach((b) => {
     b.addEventListener("click", () => {
         if (x == "") {
             console.log("empty");
-        } else if (!Number(x[x.length - 1])) {
-            x = x.slice(0, x.length - 1);
+        } else if (Number(x[x.length - 1]) || x[x.length-1]==")") {
             x = x + b.innerHTML;
             equation.innerHTML = x;
         } else {
+            x = x.slice(0, x.length - 1);
             x = x + b.innerHTML;
             equation.innerHTML = x;
         }
@@ -37,7 +37,14 @@ document.querySelector(".clear").addEventListener("click", () => {
 });
 
 document.querySelector(".bspace").addEventListener("click", () => {
-    x = x.slice(0, x.length - 1);
+    let a = "";
+    let b = 0;
+    if (x[x.length - 1] == ")") {
+        a = ")";
+        b = 1;
+    }
+    x = x.slice(0, x.length - 1 - b);
+    x = x + a;
     try {
         if (!x) {
             equation.innerHTML = "";
@@ -47,12 +54,13 @@ document.querySelector(".bspace").addEventListener("click", () => {
             result.innerHTML = String(eval(x));
         }
     } catch (e) {
+        result.innerHTML = String(eval(x.slice(0, x.length - 1)));
         console.log(e);
     }
 });
 document.querySelector(".equalto").addEventListener("click", () => {
     try {
-        x = x.length==0 ? "":String(eval(x));
+        x = x.length == 0 ? "" : String(eval(x));
         equation.innerHTML = x;
         result.innerHTML = "";
     } catch (e) {
