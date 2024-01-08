@@ -7,6 +7,9 @@ result.innerHTML = "";
 // document.querySelector(".display").innerHTML=eq;
 document.querySelectorAll(".num").forEach((b) => {
     b.addEventListener("click", () => {
+        if (x[x.length - 1] == 0 && !Number(x[x.length - 2])) {
+            x=x.slice(0,x.length-1)
+        }
         if (x[x.length - 1] == ")") {
             x = x.slice(0, x.length - 1) + b.innerHTML + ")";
         } else {
@@ -20,7 +23,7 @@ document.querySelectorAll(".op").forEach((b) => {
     b.addEventListener("click", () => {
         if (x == "") {
             console.log("empty");
-        } else if (Number(x[x.length - 1]) || x[x.length-1]==")") {
+        } else if (Number(x[x.length - 1]) || x[x.length - 1] == ")") {
             x = x + b.innerHTML;
             equation.innerHTML = x;
         } else {
